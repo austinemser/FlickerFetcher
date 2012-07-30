@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6ED9721015C72CEC00C2DC12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9720F15C72CEC00C2DC12 /* UIKit.framework */; };
+		6ED9721215C72CEC00C2DC12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721115C72CEC00C2DC12 /* Foundation.framework */; };
+		6ED9721415C72CEC00C2DC12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721315C72CEC00C2DC12 /* CoreGraphics.framework */; };
+		6ED9721A15C72CEC00C2DC12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6ED9721815C72CEC00C2DC12 /* InfoPlist.strings */; };
+		6ED9721C15C72CEC00C2DC12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9721B15C72CEC00C2DC12 /* main.m */; };
+		6ED9722015C72CEC00C2DC12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */; };
+		6ED9722315C72CEC00C2DC12 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED9722115C72CEC00C2DC12 /* MainStoryboard.storyboard */; };
+		6ED9722615C72CEC00C2DC12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9722515C72CEC00C2DC12 /* ViewController.m */; };
+		6ED9722E15C72CEC00C2DC12 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9722D15C72CEC00C2DC12 /* SenTestingKit.framework */; };
+		6ED9722F15C72CEC00C2DC12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9720F15C72CEC00C2DC12 /* UIKit.framework */; };
+		6ED9723015C72CEC00C2DC12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721115C72CEC00C2DC12 /* Foundation.framework */; };
+		6ED9723815C72CEC00C2DC12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6ED9723615C72CEC00C2DC12 /* InfoPlist.strings */; };
+		6ED9723B15C72CEC00C2DC12 /* FlickerFetcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9723A15C72CEC00C2DC12 /* FlickerFetcherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6ED9723115C72CEC00C2DC12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED9720215C72CEC00C2DC12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ED9720A15C72CEC00C2DC12;
+			remoteInfo = FlickerFetcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6ED9720B15C72CEC00C2DC12 /* FlickerFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED9720F15C72CEC00C2DC12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6ED9721115C72CEC00C2DC12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6ED9721315C72CEC00C2DC12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6ED9721715C72CEC00C2DC12 /* FlickerFetcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlickerFetcher-Info.plist"; sourceTree = "<group>"; };
+		6ED9721915C72CEC00C2DC12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6ED9721B15C72CEC00C2DC12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6ED9721D15C72CEC00C2DC12 /* FlickerFetcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlickerFetcher-Prefix.pch"; sourceTree = "<group>"; };
+		6ED9721E15C72CEC00C2DC12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6ED9722215C72CEC00C2DC12 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		6ED9722415C72CEC00C2DC12 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6ED9722515C72CEC00C2DC12 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6ED9722C15C72CEC00C2DC12 /* FlickerFetcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerFetcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED9722D15C72CEC00C2DC12 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		6ED9723515C72CEC00C2DC12 /* FlickerFetcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlickerFetcherTests-Info.plist"; sourceTree = "<group>"; };
+		6ED9723715C72CEC00C2DC12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6ED9723915C72CEC00C2DC12 /* FlickerFetcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickerFetcherTests.h; sourceTree = "<group>"; };
+		6ED9723A15C72CEC00C2DC12 /* FlickerFetcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickerFetcherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6ED9720815C72CEC00C2DC12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED9721015C72CEC00C2DC12 /* UIKit.framework in Frameworks */,
+				6ED9721215C72CEC00C2DC12 /* Foundation.framework in Frameworks */,
+				6ED9721415C72CEC00C2DC12 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED9722815C72CEC00C2DC12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED9722E15C72CEC00C2DC12 /* SenTestingKit.framework in Frameworks */,
+				6ED9722F15C72CEC00C2DC12 /* UIKit.framework in Frameworks */,
+				6ED9723015C72CEC00C2DC12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6ED9720015C72CEC00C2DC12 = {
+			isa = PBXGroup;
+			children = (
+				6ED9721515C72CEC00C2DC12 /* FlickerFetcher */,
+				6ED9723315C72CEC00C2DC12 /* FlickerFetcherTests */,
+				6ED9720E15C72CEC00C2DC12 /* Frameworks */,
+				6ED9720C15C72CEC00C2DC12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6ED9720C15C72CEC00C2DC12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9720B15C72CEC00C2DC12 /* FlickerFetcher.app */,
+				6ED9722C15C72CEC00C2DC12 /* FlickerFetcherTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6ED9720E15C72CEC00C2DC12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9720F15C72CEC00C2DC12 /* UIKit.framework */,
+				6ED9721115C72CEC00C2DC12 /* Foundation.framework */,
+				6ED9721315C72CEC00C2DC12 /* CoreGraphics.framework */,
+				6ED9722D15C72CEC00C2DC12 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6ED9721515C72CEC00C2DC12 /* FlickerFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9721E15C72CEC00C2DC12 /* AppDelegate.h */,
+				6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */,
+				6ED9722115C72CEC00C2DC12 /* MainStoryboard.storyboard */,
+				6ED9722415C72CEC00C2DC12 /* ViewController.h */,
+				6ED9722515C72CEC00C2DC12 /* ViewController.m */,
+				6ED9721615C72CEC00C2DC12 /* Supporting Files */,
+			);
+			path = FlickerFetcher;
+			sourceTree = "<group>";
+		};
+		6ED9721615C72CEC00C2DC12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9721715C72CEC00C2DC12 /* FlickerFetcher-Info.plist */,
+				6ED9721815C72CEC00C2DC12 /* InfoPlist.strings */,
+				6ED9721B15C72CEC00C2DC12 /* main.m */,
+				6ED9721D15C72CEC00C2DC12 /* FlickerFetcher-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6ED9723315C72CEC00C2DC12 /* FlickerFetcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9723915C72CEC00C2DC12 /* FlickerFetcherTests.h */,
+				6ED9723A15C72CEC00C2DC12 /* FlickerFetcherTests.m */,
+				6ED9723415C72CEC00C2DC12 /* Supporting Files */,
+			);
+			path = FlickerFetcherTests;
+			sourceTree = "<group>";
+		};
+		6ED9723415C72CEC00C2DC12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9723515C72CEC00C2DC12 /* FlickerFetcherTests-Info.plist */,
+				6ED9723615C72CEC00C2DC12 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6ED9720A15C72CEC00C2DC12 /* FlickerFetcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ED9723E15C72CEC00C2DC12 /* Build configuration list for PBXNativeTarget "FlickerFetcher" */;
+			buildPhases = (
+				6ED9720715C72CEC00C2DC12 /* Sources */,
+				6ED9720815C72CEC00C2DC12 /* Frameworks */,
+				6ED9720915C72CEC00C2DC12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlickerFetcher;
+			productName = FlickerFetcher;
+			productReference = 6ED9720B15C72CEC00C2DC12 /* FlickerFetcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6ED9722B15C72CEC00C2DC12 /* FlickerFetcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ED9724115C72CEC00C2DC12 /* Build configuration list for PBXNativeTarget "FlickerFetcherTests" */;
+			buildPhases = (
+				6ED9722715C72CEC00C2DC12 /* Sources */,
+				6ED9722815C72CEC00C2DC12 /* Frameworks */,
+				6ED9722915C72CEC00C2DC12 /* Resources */,
+				6ED9722A15C72CEC00C2DC12 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ED9723215C72CEC00C2DC12 /* PBXTargetDependency */,
+			);
+			name = FlickerFetcherTests;
+			productName = FlickerFetcherTests;
+			productReference = 6ED9722C15C72CEC00C2DC12 /* FlickerFetcherTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6ED9720215C72CEC00C2DC12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Austin Emser";
+			};
+			buildConfigurationList = 6ED9720515C72CEC00C2DC12 /* Build configuration list for PBXProject "FlickerFetcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6ED9720015C72CEC00C2DC12;
+			productRefGroup = 6ED9720C15C72CEC00C2DC12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6ED9720A15C72CEC00C2DC12 /* FlickerFetcher */,
+				6ED9722B15C72CEC00C2DC12 /* FlickerFetcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6ED9720915C72CEC00C2DC12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED9721A15C72CEC00C2DC12 /* InfoPlist.strings in Resources */,
+				6ED9722315C72CEC00C2DC12 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED9722915C72CEC00C2DC12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED9723815C72CEC00C2DC12 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6ED9722A15C72CEC00C2DC12 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6ED9720715C72CEC00C2DC12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED9721C15C72CEC00C2DC12 /* main.m in Sources */,
+				6ED9722015C72CEC00C2DC12 /* AppDelegate.m in Sources */,
+				6ED9722615C72CEC00C2DC12 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED9722715C72CEC00C2DC12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED9723B15C72CEC00C2DC12 /* FlickerFetcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6ED9723215C72CEC00C2DC12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6ED9720A15C72CEC00C2DC12 /* FlickerFetcher */;
+			targetProxy = 6ED9723115C72CEC00C2DC12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6ED9721815C72CEC00C2DC12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ED9721915C72CEC00C2DC12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6ED9722115C72CEC00C2DC12 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ED9722215C72CEC00C2DC12 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		6ED9723615C72CEC00C2DC12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ED9723715C72CEC00C2DC12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6ED9723C15C72CEC00C2DC12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6ED9723D15C72CEC00C2DC12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6ED9723F15C72CEC00C2DC12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlickerFetcher/FlickerFetcher-Prefix.pch";
+				INFOPLIST_FILE = "FlickerFetcher/FlickerFetcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6ED9724015C72CEC00C2DC12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlickerFetcher/FlickerFetcher-Prefix.pch";
+				INFOPLIST_FILE = "FlickerFetcher/FlickerFetcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6ED9724215C72CEC00C2DC12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlickerFetcher.app/FlickerFetcher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlickerFetcher/FlickerFetcher-Prefix.pch";
+				INFOPLIST_FILE = "FlickerFetcherTests/FlickerFetcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		6ED9724315C72CEC00C2DC12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlickerFetcher.app/FlickerFetcher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlickerFetcher/FlickerFetcher-Prefix.pch";
+				INFOPLIST_FILE = "FlickerFetcherTests/FlickerFetcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6ED9720515C72CEC00C2DC12 /* Build configuration list for PBXProject "FlickerFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED9723C15C72CEC00C2DC12 /* Debug */,
+				6ED9723D15C72CEC00C2DC12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ED9723E15C72CEC00C2DC12 /* Build configuration list for PBXNativeTarget "FlickerFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED9723F15C72CEC00C2DC12 /* Debug */,
+				6ED9724015C72CEC00C2DC12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6ED9724115C72CEC00C2DC12 /* Build configuration list for PBXNativeTarget "FlickerFetcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED9724215C72CEC00C2DC12 /* Debug */,
+				6ED9724315C72CEC00C2DC12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6ED9720215C72CEC00C2DC12 /* Project object */;
+}
