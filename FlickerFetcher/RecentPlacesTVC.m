@@ -1,22 +1,21 @@
 //
-//  PhotosInPlaceTVC.m
+//  RecentPlacesTVC.m
 //  FlickerFetcher
 //
-//  Created by Austin Emser on 7/31/12.
+//  Created by Austin Emser on 8/1/12.
 //  Copyright (c) 2012 Austin Emser. All rights reserved.
 //
 
-#import "PhotosInPlaceTVC.h"
+#import "RecentPlacesTVC.h"
 #import "ImageVC.h"
 #import "FlickrFetcher/FlickrFetcher.h"
 
-@interface PhotosInPlaceTVC ()
+@interface RecentPlacesTVC ()
 
 @end
 
-@implementation PhotosInPlaceTVC
-
-@synthesize photosInPlace = _photosInPlace;
+@implementation RecentPlacesTVC
+@synthesize recentPlaces;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,20 +26,28 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.recentPlaces = [defaults objectForKey:@"recent"];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.recentPlaces = nil;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.recentPlaces = [defaults objectForKey:@"recent"];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    self.recentPlaces = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -56,15 +63,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.photosInPlace count];
+    return [self.recentPlaces count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Photo Cell";
+    static NSString *CellIdentifier = @"Recent Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSDictionary *photo = [self.photosInPlace objectAtIndex:indexPath.row];
+    NSDictionary *photo = [self.recentPlaces objectAtIndex:indexPath.row];
     NSString *title = [photo valueForKey:@"title"];
     NSDictionary *descriptionDict = [photo valueForKey:@"description"];
     NSString *description = [descriptionDict valueForKey:@"_content"];
@@ -133,33 +140,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *photo = [self.photosInPlace objectAtIndex:indexPath.row];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *recentPlaces = [[defaults objectForKey:@"recent"] mutableCopy];
-    if (!recentPlaces) recentPlaces = [NSMutableArray array];
-    
-    for(NSDictionary *dict in recentPlaces)
-    {
-        if([[dict objectForKey:@"id"] isEqualToString:[photo objectForKey:@"id"]])
-        {
-            [recentPlaces removeObject:dict];
-        }
-    }
-    [recentPlaces addObject:photo];
-    [defaults setObject:recentPlaces forKey:@"recent"];
-    [defaults synchronize];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-        if([[segue identifier] isEqualToString:@"Image Segue"])
-        {
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            NSDictionary *photo = [self.photosInPlace objectAtIndex:indexPath.row];
-            [segue.destinationViewController setImageURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge]];
-        }
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSDictionary *photo = [self.recentPlaces objectAtIndex:indexPath.row];
+    
+    [segue.destinationViewController setImageURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge]];
 }
 
 @end
-
-

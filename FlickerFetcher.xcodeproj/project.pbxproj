@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E4C9EB215C9B0BF00765D3A /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C9EB115C9B0BF00765D3A /* ImageVC.m */; };
+		6E4C9EB615C9C18700765D3A /* RecentPlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C9EB515C9C18700765D3A /* RecentPlacesTVC.m */; };
 		6ED9721015C72CEC00C2DC12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9720F15C72CEC00C2DC12 /* UIKit.framework */; };
 		6ED9721215C72CEC00C2DC12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721115C72CEC00C2DC12 /* Foundation.framework */; };
 		6ED9721415C72CEC00C2DC12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721315C72CEC00C2DC12 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		6E4C9EB015C9B0BF00765D3A /* ImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
 		6E4C9EB115C9B0BF00765D3A /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
+		6E4C9EB415C9C18700765D3A /* RecentPlacesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPlacesTVC.h; sourceTree = "<group>"; };
+		6E4C9EB515C9C18700765D3A /* RecentPlacesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPlacesTVC.m; sourceTree = "<group>"; };
 		6ED9720B15C72CEC00C2DC12 /* FlickerFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED9720F15C72CEC00C2DC12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6ED9721115C72CEC00C2DC12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +131,8 @@
 				6ED9721E15C72CEC00C2DC12 /* AppDelegate.h */,
 				6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */,
 				6ED9722115C72CEC00C2DC12 /* MainStoryboard.storyboard */,
+				6E4C9EB415C9C18700765D3A /* RecentPlacesTVC.h */,
+				6E4C9EB515C9C18700765D3A /* RecentPlacesTVC.m */,
 				6E4C9EB015C9B0BF00765D3A /* ImageVC.h */,
 				6E4C9EB115C9B0BF00765D3A /* ImageVC.m */,
 				6ED9725015C8646400C2DC12 /* PhotosInPlaceTVC.h */,
@@ -295,6 +300,7 @@
 				6ED9724B15C84F1F00C2DC12 /* FlickrFetcher.m in Sources */,
 				6ED9725215C8646400C2DC12 /* PhotosInPlaceTVC.m in Sources */,
 				6E4C9EB215C9B0BF00765D3A /* ImageVC.m in Sources */,
+				6E4C9EB615C9C18700765D3A /* RecentPlacesTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Top Places";
     NSMutableArray *arraySort = [[NSMutableArray alloc] init];
     arraySort = [self.flickrTopPlaces mutableCopy];
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"_content" ascending:YES];
