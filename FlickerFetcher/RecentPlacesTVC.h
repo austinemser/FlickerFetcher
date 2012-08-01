@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RecentPlacesTVC : UITableViewController
-@property (nonatomic, weak) NSArray *recentPlaces;
+@property (nonatomic, strong) NSArray *recentPlaces;
 @end

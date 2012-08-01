@@ -133,6 +133,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    BOOL addObject = YES;
     NSDictionary *photo = [self.photosInPlace objectAtIndex:indexPath.row];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *recentPlaces = [[defaults objectForKey:@"recent"] mutableCopy];
@@ -142,10 +143,14 @@
     {
         if([[dict objectForKey:@"id"] isEqualToString:[photo objectForKey:@"id"]])
         {
-            [recentPlaces removeObject:dict];
+            addObject = NO;
         }
     }
-    [recentPlaces addObject:photo];
+    
+    if(addObject)
+    {
+        [recentPlaces addObject:photo];
+    }
     [defaults setObject:recentPlaces forKey:@"recent"];
     [defaults synchronize];
 }

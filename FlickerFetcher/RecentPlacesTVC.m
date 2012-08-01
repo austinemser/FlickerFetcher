@@ -30,6 +30,7 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.recentPlaces = [defaults objectForKey:@"recent"];
+    [self.tableView reloadData];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -40,8 +41,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.recentPlaces = [defaults objectForKey:@"recent"];
 }
 
 - (void)viewDidUnload
