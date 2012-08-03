@@ -139,13 +139,24 @@
     NSMutableArray *recentPlaces = [[defaults objectForKey:@"recent"] mutableCopy];
     if (!recentPlaces) recentPlaces = [NSMutableArray array];
     
-    for(NSDictionary *dict in recentPlaces)
+    
+    for(int i=0; i<recentPlaces.count; i++)
+    {
+        NSDictionary *dict = [recentPlaces objectAtIndex:i];
+        if([[dict objectForKey:@"id"] isEqualToString:[photo objectForKey:@"id"]])
+        {
+            [recentPlaces removeObject:dict];
+            i--;
+        }
+    }
+    
+    /*for(NSDictionary *dict in recentPlaces)
     {
         if([[dict objectForKey:@"id"] isEqualToString:[photo objectForKey:@"id"]])
         {
             addObject = NO;
         }
-    }
+    }*/
     
     if(addObject)
     {

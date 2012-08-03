@@ -15,7 +15,16 @@
 @end
 
 @implementation RecentPlacesTVC
-@synthesize recentPlaces;
+@synthesize recentPlaces = _recentPlaces;
+
+-(void) setRecentPlaces:(NSArray *)recentPlaces
+{
+    if(_recentPlaces != recentPlaces)
+    {
+        _recentPlaces = recentPlaces;
+        [self.tableView reloadData];
+    }
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,8 +38,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.recentPlaces = [defaults objectForKey:@"recent"];
-    [self.tableView reloadData];
+    NSArray *tempArray = [defaults objectForKey:@"recent"];
+    self.recentPlaces = [[tempArray reverseObjectEnumerator] allObjects]; //need this call, setter reloads data
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -69,11 +78,12 @@
 {
     static NSString *CellIdentifier = @"Recent Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     NSDictionary *photo = [self.recentPlaces objectAtIndex:indexPath.row];
     NSString *title = [photo valueForKey:@"title"];
     NSDictionary *descriptionDict = [photo valueForKey:@"description"];
     NSString *description = [descriptionDict valueForKey:@"_content"];
+    
+    
     
     if(title)
     {

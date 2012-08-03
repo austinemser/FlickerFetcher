@@ -31,14 +31,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    NSData *imageData = [NSData dataWithContentsOfURL:self.imageURL];
-    self.image = [UIImage imageWithData:imageData];
-    self.imageView.image = self.image;
-    self.scrollView.delegate = self;
-    self.scrollView.contentSize = self.imageView.image.size;
-    self.imageView.frame = CGRectMake(0,0, self.imageView.image.size.width, self.imageView.image.size.height);
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner hidesWhenStopped];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     
+	dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:self.imageURL];
+        self.image = [UIImage imageWithData:imageData];
+        dispatch_async(dispatch_get_current_queue(), ^{
+            [spinner stopAnimating];
+            self.imageView.image = self.image;
+            self.scrollView.delegate = self;
+            self.imageView.frame = CGRectMake(0,0, self.imageView.image.size.width, self.imageView.image.size.height);
+            self.scrollView.contentSize = self.imageView.image.size;
+        });
+    });
+    dispatch_release(downloadQueue);
 }
 
 - (void)viewDidUnload
