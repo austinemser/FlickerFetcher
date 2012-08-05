@@ -37,6 +37,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="imageView" destination="3Sq-wX-cnG" id="knr-l8-Xkl"/>
                         <outlet property="toolBar" destination="52c-u6-h5j" id="hly-4m-IFw"/>
                     </connections>
                 </viewController>
@@ -199,9 +200,28 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1265" y="543"/>
+            <point key="canvasLocation" x="1381" y="560"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="ImageVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="PhotosInPlaceTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosInPlaceTVC.h"/>
+        </class>
+        <class className="RecentPlacesTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPlacesTVC.h"/>
+        </class>
+        <class className="TopPlaceTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlaceTVC.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

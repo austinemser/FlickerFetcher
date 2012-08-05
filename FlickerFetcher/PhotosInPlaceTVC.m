@@ -189,16 +189,25 @@
     }
     [defaults setObject:recentPlaces forKey:@"recent"];
     [defaults synchronize];
+    
+    if([self splitViewController])
+    {
+        id ivc = [self.splitViewController.viewControllers lastObject];
+        if([ivc isKindOfClass:[ImageVC class]])
+        {
+            ivc = (ImageVC *)ivc;
+            [ivc setImageURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge]];
+        }
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-        if([[segue identifier] isEqualToString:@"Image Segue"])
-        {
+        
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             NSDictionary *photo = [self.photosInPlace objectAtIndex:indexPath.row];
             [segue.destinationViewController setImageURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge]];
-        }
+        
 }
 
 @end

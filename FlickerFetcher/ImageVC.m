@@ -19,9 +19,18 @@
 @synthesize scrollView;
 @synthesize imageView;
 @synthesize toolBar;
-@synthesize imageURL;
-@synthesize image;
+@synthesize imageURL = _imageURL;
+@synthesize image = _image;
 @synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
+
+-(void)setImageURL:(NSURL *)imageURL
+{
+    if(_imageURL != imageURL)
+    {
+        _imageURL = imageURL;
+        [self viewDidLoad];
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,14 +61,20 @@
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner hidesWhenStopped];
     [spinner startAnimating];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
-
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        
+    }
+    else
+    {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    }
 	dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
     dispatch_async(downloadQueue, ^{
         NSData *imageData = [NSData dataWithContentsOfURL:self.imageURL];
-        self.image = [UIImage imageWithData:imageData];
         dispatch_async(dispatch_get_current_queue(), ^{
             [spinner stopAnimating];
+            self.image = [UIImage imageWithData:imageData];
             self.imageView.image = self.image;
             self.scrollView.delegate = self;
             self.imageView.frame = CGRectMake(0,0, self.imageView.image.size.width, self.imageView.image.size.height);
