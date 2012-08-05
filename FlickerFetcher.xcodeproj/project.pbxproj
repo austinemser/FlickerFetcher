@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		6E4C9EB215C9B0BF00765D3A /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C9EB115C9B0BF00765D3A /* ImageVC.m */; };
 		6E4C9EB615C9C18700765D3A /* RecentPlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C9EB515C9C18700765D3A /* RecentPlacesTVC.m */; };
+		6ECBC3D015CE1EBB00C86D4B /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ECBC3CF15CE1EBB00C86D4B /* iPad.storyboard */; };
 		6ED9721015C72CEC00C2DC12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9720F15C72CEC00C2DC12 /* UIKit.framework */; };
 		6ED9721215C72CEC00C2DC12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721115C72CEC00C2DC12 /* Foundation.framework */; };
 		6ED9721415C72CEC00C2DC12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721315C72CEC00C2DC12 /* CoreGraphics.framework */; };
 		6ED9721A15C72CEC00C2DC12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6ED9721815C72CEC00C2DC12 /* InfoPlist.strings */; };
 		6ED9721C15C72CEC00C2DC12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9721B15C72CEC00C2DC12 /* main.m */; };
 		6ED9722015C72CEC00C2DC12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */; };
-		6ED9722315C72CEC00C2DC12 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED9722115C72CEC00C2DC12 /* MainStoryboard.storyboard */; };
+		6ED9722315C72CEC00C2DC12 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED9722115C72CEC00C2DC12 /* iPhone.storyboard */; };
 		6ED9722E15C72CEC00C2DC12 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9722D15C72CEC00C2DC12 /* SenTestingKit.framework */; };
 		6ED9722F15C72CEC00C2DC12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9720F15C72CEC00C2DC12 /* UIKit.framework */; };
 		6ED9723015C72CEC00C2DC12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721115C72CEC00C2DC12 /* Foundation.framework */; };
@@ -41,6 +42,7 @@
 		6E4C9EB115C9B0BF00765D3A /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
 		6E4C9EB415C9C18700765D3A /* RecentPlacesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPlacesTVC.h; sourceTree = "<group>"; };
 		6E4C9EB515C9C18700765D3A /* RecentPlacesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPlacesTVC.m; sourceTree = "<group>"; };
+		6ECBC3CF15CE1EBB00C86D4B /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		6ED9720B15C72CEC00C2DC12 /* FlickerFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED9720F15C72CEC00C2DC12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6ED9721115C72CEC00C2DC12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,7 +53,7 @@
 		6ED9721D15C72CEC00C2DC12 /* FlickerFetcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlickerFetcher-Prefix.pch"; sourceTree = "<group>"; };
 		6ED9721E15C72CEC00C2DC12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6ED9722215C72CEC00C2DC12 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		6ED9722215C72CEC00C2DC12 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		6ED9722C15C72CEC00C2DC12 /* FlickerFetcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerFetcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED9722D15C72CEC00C2DC12 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6ED9723515C72CEC00C2DC12 /* FlickerFetcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlickerFetcherTests-Info.plist"; sourceTree = "<group>"; };
@@ -127,7 +129,8 @@
 				6ED9724715C84F1F00C2DC12 /* FlickrFetcher */,
 				6ED9721E15C72CEC00C2DC12 /* AppDelegate.h */,
 				6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */,
-				6ED9722115C72CEC00C2DC12 /* MainStoryboard.storyboard */,
+				6ED9722115C72CEC00C2DC12 /* iPhone.storyboard */,
+				6ECBC3CF15CE1EBB00C86D4B /* iPad.storyboard */,
 				6E4C9EB415C9C18700765D3A /* RecentPlacesTVC.h */,
 				6E4C9EB515C9C18700765D3A /* RecentPlacesTVC.m */,
 				6E4C9EB015C9B0BF00765D3A /* ImageVC.h */,
@@ -253,7 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ED9721A15C72CEC00C2DC12 /* InfoPlist.strings in Resources */,
-				6ED9722315C72CEC00C2DC12 /* MainStoryboard.storyboard in Resources */,
+				6ED9722315C72CEC00C2DC12 /* iPhone.storyboard in Resources */,
+				6ECBC3D015CE1EBB00C86D4B /* iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,12 +329,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		6ED9722115C72CEC00C2DC12 /* MainStoryboard.storyboard */ = {
+		6ED9722115C72CEC00C2DC12 /* iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6ED9722215C72CEC00C2DC12 /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		6ED9723615C72CEC00C2DC12 /* InfoPlist.strings */ = {
@@ -399,7 +403,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlickerFetcher/FlickerFetcher-Prefix.pch";
 				INFOPLIST_FILE = "FlickerFetcher/FlickerFetcher-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -410,7 +416,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlickerFetcher/FlickerFetcher-Prefix.pch";
 				INFOPLIST_FILE = "FlickerFetcher/FlickerFetcher-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
