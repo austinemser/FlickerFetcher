@@ -16,7 +16,17 @@
 
 @implementation PhotosInPlaceTVC
 
+@synthesize place = _place;
 @synthesize photosInPlace = _photosInPlace;
+
+-(void)setPhotosInPlace:(NSArray *)photosInPlace
+{
+    if(_photosInPlace != photosInPlace)
+    {
+        _photosInPlace = photosInPlace;
+        [self.tableView reloadData];
+    }
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,7 +40,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner hidesWhenStopped];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    
+    dispatch_queue_t loadQueue = dispatch_queue_create("photos in place", NULL);
+    dispatch_async(loadQueue, ^{
+        NSArray *tempArray = [FlickrFetcher photosInPlace:self.place maxResults:50];
+        dispatch_async(dispatch_get_current_queue(), ^{
+            self.photosInPlace = tempArray;
+            [spinner stopAnimating];
+        });
+    });
+    dispatch_release(loadQueue);
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

@@ -18,13 +18,13 @@
 
 @synthesize flickrTopPlaces = _flickrTopPlaces;
 
--(NSArray *)flickrTopPlaces
+-(void)setFlickrTopPlaces:(NSArray *)flickrTopPlaces
 {
-    if(!_flickrTopPlaces)
+    if(_flickrTopPlaces != flickrTopPlaces)
     {
-        _flickrTopPlaces = [FlickrFetcher topPlaces];
+        _flickrTopPlaces = flickrTopPlaces;
+        [self.tableView reloadData];
     }
-    return _flickrTopPlaces;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -40,11 +40,23 @@
 {
     [super viewDidLoad];
     self.title = @"Top Places";
-    NSMutableArray *arraySort = [[NSMutableArray alloc] init];
-    arraySort = [self.flickrTopPlaces mutableCopy];
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"_content" ascending:YES];
-    [arraySort sortUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
-    self.flickrTopPlaces = [arraySort copy];
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner hidesWhenStopped];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    
+    dispatch_queue_t loadQueue = dispatch_queue_create("load initial queue", NULL);
+    dispatch_async(loadQueue, ^{
+        NSMutableArray *arraySort = [[NSMutableArray alloc] init];
+        arraySort = [[FlickrFetcher topPlaces] mutableCopy];
+        NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"_content" ascending:YES];
+        [arraySort sortUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
+        dispatch_async(dispatch_get_current_queue(), ^{
+            [spinner stopAnimating];
+            self.flickrTopPlaces = [arraySort copy];
+        });
+    });
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -143,13 +155,13 @@
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDictionary *place = [self.flickrTopPlaces objectAtIndex:indexPath.row];
-        NSArray *photosInPlace = [FlickrFetcher photosInPlace:place maxResults:50];
+        
         
         //set the title of the new window to the city
         NSArray *location = [[place valueForKey:@"_content"] componentsSeparatedByString:@","];
         NSString *title = [location objectAtIndex:0];
         
-        [segue.destinationViewController setPhotosInPlace:photosInPlace];
+        [segue.destinationViewController setPlace:place];
         [segue.destinationViewController setTitle:title];
         
     }

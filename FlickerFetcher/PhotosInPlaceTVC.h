@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotosInPlaceTVC : UITableViewController
+@property (nonatomic, strong) NSDictionary *place;
 @property (nonatomic, strong) NSArray *photosInPlace;
 @end
