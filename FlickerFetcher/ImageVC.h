@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SplitViewBarButtonItemPresenter.h"
 
-@interface ImageVC : UIViewController
+@interface ImageVC : UIViewController <SplitViewBarButtonItemPresenter>
 @property (nonatomic, strong) NSURL *imageURL;
 @property (nonatomic, weak) UIImage *image;
 @end

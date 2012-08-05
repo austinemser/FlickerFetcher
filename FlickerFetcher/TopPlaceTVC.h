@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SplitViewBarButtonItemPresenter.h"
 
-@interface TopPlaceTVC : UITableViewController
+@interface TopPlaceTVC : UITableViewController <UISplitViewControllerDelegate, SplitViewBarButtonItemPresenter>
 @property (nonatomic, strong) NSArray *flickrTopPlaces;
 @end

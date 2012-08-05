@@ -11,13 +11,17 @@
 @interface ImageVC () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+
 @end
 
 @implementation ImageVC
 @synthesize scrollView;
 @synthesize imageView;
+@synthesize toolBar;
 @synthesize imageURL;
 @synthesize image;
+@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,14 +32,28 @@
     return self;
 }
 
+-(void)setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    if(_splitViewBarButtonItem != splitViewBarButtonItem){
+        NSMutableArray *toolBarItems = [self.toolBar.items mutableCopy];
+        if(_splitViewBarButtonItem) [toolBarItems removeObject:_splitViewBarButtonItem];
+        if(splitViewBarButtonItem) [toolBarItems insertObject:splitViewBarButtonItem atIndex:0];
+        self.toolBar.items = toolBarItems;
+        _splitViewBarButtonItem = splitViewBarButtonItem;
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+
+    
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner hidesWhenStopped];
     [spinner startAnimating];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
-    
+
 	dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
     dispatch_async(downloadQueue, ^{
         NSData *imageData = [NSData dataWithContentsOfURL:self.imageURL];
@@ -56,13 +74,14 @@
     self.imageURL = nil;
     [self setScrollView:nil];
     [self setImageView:nil];
+    [self setToolBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView

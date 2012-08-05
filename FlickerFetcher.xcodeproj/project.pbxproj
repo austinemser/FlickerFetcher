@@ -25,6 +25,7 @@
 		6ED9724615C7321500C2DC12 /* TopPlaceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9724515C7321500C2DC12 /* TopPlaceTVC.m */; };
 		6ED9724B15C84F1F00C2DC12 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9724A15C84F1F00C2DC12 /* FlickrFetcher.m */; };
 		6ED9725215C8646400C2DC12 /* PhotosInPlaceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9725115C8646400C2DC12 /* PhotosInPlaceTVC.m */; };
+		6EDE38EF15CEF8480034C113 /* RotatableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE38EE15CEF8480034C113 /* RotatableVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,9 @@
 		6ED9724A15C84F1F00C2DC12 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 		6ED9725015C8646400C2DC12 /* PhotosInPlaceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosInPlaceTVC.h; sourceTree = "<group>"; };
 		6ED9725115C8646400C2DC12 /* PhotosInPlaceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosInPlaceTVC.m; sourceTree = "<group>"; };
+		6EDE38ED15CEF8480034C113 /* RotatableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatableVC.h; sourceTree = "<group>"; };
+		6EDE38EE15CEF8480034C113 /* RotatableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatableVC.m; sourceTree = "<group>"; };
+		6EDE38F015CEF8640034C113 /* SplitViewBarButtonItemPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewBarButtonItemPresenter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,9 @@
 				6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */,
 				6ED9722115C72CEC00C2DC12 /* iPhone.storyboard */,
 				6ECBC3CF15CE1EBB00C86D4B /* iPad.storyboard */,
+				6EDE38F015CEF8640034C113 /* SplitViewBarButtonItemPresenter.h */,
+				6EDE38ED15CEF8480034C113 /* RotatableVC.h */,
+				6EDE38EE15CEF8480034C113 /* RotatableVC.m */,
 				6E4C9EB415C9C18700765D3A /* RecentPlacesTVC.h */,
 				6E4C9EB515C9C18700765D3A /* RecentPlacesTVC.m */,
 				6E4C9EB015C9B0BF00765D3A /* ImageVC.h */,
@@ -299,6 +306,7 @@
 				6ED9725215C8646400C2DC12 /* PhotosInPlaceTVC.m in Sources */,
 				6E4C9EB215C9B0BF00765D3A /* ImageVC.m in Sources */,
 				6E4C9EB615C9C18700765D3A /* RecentPlacesTVC.m in Sources */,
+				6EDE38EF15CEF8480034C113 /* RotatableVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
