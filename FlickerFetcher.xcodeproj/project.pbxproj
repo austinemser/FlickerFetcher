@@ -16,7 +16,6 @@
 		6ED9721C15C72CEC00C2DC12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9721B15C72CEC00C2DC12 /* main.m */; };
 		6ED9722015C72CEC00C2DC12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */; };
 		6ED9722315C72CEC00C2DC12 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED9722115C72CEC00C2DC12 /* MainStoryboard.storyboard */; };
-		6ED9722615C72CEC00C2DC12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9722515C72CEC00C2DC12 /* ViewController.m */; };
 		6ED9722E15C72CEC00C2DC12 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9722D15C72CEC00C2DC12 /* SenTestingKit.framework */; };
 		6ED9722F15C72CEC00C2DC12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9720F15C72CEC00C2DC12 /* UIKit.framework */; };
 		6ED9723015C72CEC00C2DC12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9721115C72CEC00C2DC12 /* Foundation.framework */; };
@@ -53,8 +52,6 @@
 		6ED9721E15C72CEC00C2DC12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6ED9721F15C72CEC00C2DC12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6ED9722215C72CEC00C2DC12 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6ED9722415C72CEC00C2DC12 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6ED9722515C72CEC00C2DC12 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6ED9722C15C72CEC00C2DC12 /* FlickerFetcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerFetcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED9722D15C72CEC00C2DC12 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6ED9723515C72CEC00C2DC12 /* FlickerFetcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlickerFetcherTests-Info.plist"; sourceTree = "<group>"; };
@@ -139,8 +136,6 @@
 				6ED9725115C8646400C2DC12 /* PhotosInPlaceTVC.m */,
 				6ED9724415C7321500C2DC12 /* TopPlaceTVC.h */,
 				6ED9724515C7321500C2DC12 /* TopPlaceTVC.m */,
-				6ED9722415C72CEC00C2DC12 /* ViewController.h */,
-				6ED9722515C72CEC00C2DC12 /* ViewController.m */,
 				6ED9721615C72CEC00C2DC12 /* Supporting Files */,
 			);
 			path = FlickerFetcher;
@@ -295,7 +290,6 @@
 			files = (
 				6ED9721C15C72CEC00C2DC12 /* main.m in Sources */,
 				6ED9722015C72CEC00C2DC12 /* AppDelegate.m in Sources */,
-				6ED9722615C72CEC00C2DC12 /* ViewController.m in Sources */,
 				6ED9724615C7321500C2DC12 /* TopPlaceTVC.m in Sources */,
 				6ED9724B15C84F1F00C2DC12 /* FlickrFetcher.m in Sources */,
 				6ED9725215C8646400C2DC12 /* PhotosInPlaceTVC.m in Sources */,
