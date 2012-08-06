@@ -12,4 +12,5 @@
 @interface ImageVC : UIViewController <SplitViewBarButtonItemPresenter>
 @property (nonatomic, strong) NSURL *imageURL;
 @property (nonatomic, weak) UIImage *image;
+@property (nonatomic, weak) UIPopoverController *popoverController;
 @end

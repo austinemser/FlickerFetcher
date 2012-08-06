@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class RecentPlacesTVC;
+@protocol RecentPlacesTVCDelegate <NSObject>
+
+@optional
+-(void)recentPlacesTVC:(RecentPlacesTVC *)sender
+         choseImageURL:(NSURL *)imageURL;
+@end
+
 @interface RecentPlacesTVC : UITableViewController
 @property (nonatomic, strong) NSArray *recentPlaces;
+@property (nonatomic, weak) id <RecentPlacesTVCDelegate> delegate;
 @end

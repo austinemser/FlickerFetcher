@@ -16,6 +16,7 @@
 
 @implementation RecentPlacesTVC
 @synthesize recentPlaces = _recentPlaces;
+@synthesize delegate = _delegate;
 
 -(void) setRecentPlaces:(NSArray *)recentPlaces
 {
@@ -38,8 +39,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray *tempArray = [defaults objectForKey:@"recent"];
-    self.recentPlaces = [[tempArray reverseObjectEnumerator] allObjects]; //need this call, setter reloads data
+    self.recentPlaces = [defaults objectForKey:@"recent"]; //need this call, setter reloads data
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -115,19 +115,23 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSDictionary *place = [self.recentPlaces objectAtIndex:indexPath.row];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSMutableArray *newPlaces = [[defaults objectForKey:@"recent"] mutableCopy];
+        [newPlaces removeObject:place];
+        self.recentPlaces = [newPlaces copy];
+        [defaults setObject:self.recentPlaces forKey:@"recent"];
+        [defaults synchronize];
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+ 
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -149,13 +153,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        NSDictionary *place = [self.recentPlaces objectAtIndex:indexPath.row];
+        NSURL *imageURL = [FlickrFetcher urlForPhoto:place format:FlickrPhotoFormatLarge];
+        [self.delegate recentPlacesTVC:self choseImageURL:imageURL];
+    }
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

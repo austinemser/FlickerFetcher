@@ -25,7 +25,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rv4-zm-PpN"/>
                                     <barButtonItem title="Recent Photos" id="l5K-Q4-yeX">
                                         <connections>
-                                            <segue destination="Dla-oF-s0e" kind="popover" popoverAnchorBarButtonItem="l5K-Q4-yeX" id="Yfl-lA-o6S">
+                                            <segue destination="Dla-oF-s0e" kind="popover" identifier="Recent Places Segue" popoverAnchorBarButtonItem="l5K-Q4-yeX" id="Yfl-lA-o6S">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>

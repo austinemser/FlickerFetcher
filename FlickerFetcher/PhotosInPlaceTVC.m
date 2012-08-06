@@ -96,6 +96,7 @@
     
     if(title)
     {
+        
     }
     else if(!title && description)
     {
@@ -175,17 +176,9 @@
         }
     }
     
-    /*for(NSDictionary *dict in recentPlaces)
-    {
-        if([[dict objectForKey:@"id"] isEqualToString:[photo objectForKey:@"id"]])
-        {
-            addObject = NO;
-        }
-    }*/
-    
     if(addObject)
     {
-        [recentPlaces addObject:photo];
+        [recentPlaces insertObject:photo atIndex:0];
     }
     [defaults setObject:recentPlaces forKey:@"recent"];
     [defaults synchronize];
@@ -204,10 +197,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
         
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            NSDictionary *photo = [self.photosInPlace objectAtIndex:indexPath.row];
-            [segue.destinationViewController setImageURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge]];
-        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *photo = [self.photosInPlace objectAtIndex:indexPath.row];
+        [segue.destinationViewController setImageURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge]];
+    
 }
 
 @end
