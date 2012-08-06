@@ -117,7 +117,9 @@
                             <outlet property="delegate" destination="R2o-b0-AYb" id="3Kv-df-Mm6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top Places" id="D9s-lz-NTH"/>
+                    <navigationItem key="navigationItem" title="Top Places" id="D9s-lz-NTH">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="4Jy-BL-FYw"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
@@ -164,7 +166,9 @@
                             <outlet property="delegate" destination="Pmv-Hj-9kp" id="QCy-wZ-AKJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YTE-mR-hug"/>
+                    <navigationItem key="navigationItem" id="YTE-mR-hug">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="lab-Hd-1c5"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>

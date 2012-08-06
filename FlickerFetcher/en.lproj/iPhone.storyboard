@@ -98,7 +98,13 @@
                             <outlet property="delegate" destination="RU9-sj-AbB" id="j1q-RC-vZd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Hdf-f1-nHc"/>
+                    <navigationItem key="navigationItem" id="Hdf-f1-nHc">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="JXh-eS-mKl">
+                            <connections>
+                                <segue destination="ZPC-Yf-SxB" kind="push" id="kxr-Lt-wQh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="797" y="-461"/>
@@ -162,10 +168,36 @@
                             <outlet property="delegate" destination="mEd-wH-qPS" id="NkH-v6-l3L"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recent Photos" id="J2L-BV-FsK"/>
+                    <navigationItem key="navigationItem" title="Recent Photos" id="J2L-BV-FsK">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="wWg-ko-STR"/>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="342" y="134"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="SN5-Qn-twP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nqu-iy-8Kd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ZPC-Yf-SxB" customClass="MapVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Xi-ih-UFm">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="LVB-cu-xtD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XqM-eg-3x4"/>
+                    <connections>
+                        <outlet property="mapView" destination="LVB-cu-xtD" id="n9e-12-2j4"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1253" y="-738"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hF4-zJ-ICW">
@@ -226,30 +258,12 @@
             <point key="canvasLocation" x="-184" y="134"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ImageVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PhotosInPlaceTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosInPlaceTVC.h"/>
-        </class>
-        <class className="RecentPlacesTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPlacesTVC.h"/>
-        </class>
-        <class className="TopPlaceTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlaceTVC.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="UJq-K8-t5L"/>
+        <segue reference="Phj-5u-CzU"/>
     </inferredMetricsTieBreakers>
 </document>

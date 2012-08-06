@@ -44,6 +44,7 @@
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner hidesWhenStopped];
     [spinner startAnimating];
+    UIBarButtonItem *mapButton = self.navigationItem.rightBarButtonItem;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     
     dispatch_queue_t loadQueue = dispatch_queue_create("photos in place", NULL);
@@ -52,6 +53,7 @@
         dispatch_async(dispatch_get_current_queue(), ^{
             self.photosInPlace = tempArray;
             [spinner stopAnimating];
+            self.navigationItem.rightBarButtonItem = mapButton;
         });
     });
     dispatch_release(loadQueue);
