@@ -101,7 +101,7 @@
                     <navigationItem key="navigationItem" id="Hdf-f1-nHc">
                         <barButtonItem key="rightBarButtonItem" title="Map" id="JXh-eS-mKl">
                             <connections>
-                                <segue destination="ZPC-Yf-SxB" kind="push" id="kxr-Lt-wQh"/>
+                                <segue destination="ZPC-Yf-SxB" kind="push" identifier="Map Segue" id="kxr-Lt-wQh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -194,6 +194,7 @@
                     <navigationItem key="navigationItem" id="XqM-eg-3x4"/>
                     <connections>
                         <outlet property="mapView" destination="LVB-cu-xtD" id="n9e-12-2j4"/>
+                        <segue destination="ud1-Dg-kyq" kind="push" identifier="Accessory Tapped Segue" id="Nof-8p-mcT"/>
                     </connections>
                 </viewController>
             </objects>
@@ -258,12 +259,37 @@
             <point key="canvasLocation" x="-184" y="134"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="ImageVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="MapVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="PhotosInPlaceTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosInPlaceTVC.h"/>
+        </class>
+        <class className="RecentPlacesTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPlacesTVC.h"/>
+        </class>
+        <class className="TopPlaceTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlaceTVC.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Phj-5u-CzU"/>
+        <segue reference="Nof-8p-mcT"/>
     </inferredMetricsTieBreakers>
 </document>

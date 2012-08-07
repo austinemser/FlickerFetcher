@@ -13,7 +13,7 @@
 
 @protocol MapVCDelegate <NSObject>
 
--(UIImage *)mapVC:(MapVC *)sender imageForAnnotation:(id <MKAnnotation>)annotation;
+-(NSDictionary *)mapVC:(MapVC *)sender imageForAnnotation:(id <MKAnnotation>)annotation;
 
 @end
 

@@ -65,7 +65,6 @@
  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
-    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style

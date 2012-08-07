@@ -7,6 +7,9 @@
 //
 
 #import "MapVC.h"
+#import "ImageVC.h"
+#import "FlickrPhotoAnnotation.h"
+#import "FlickrFetcher/FlickrFetcher.h"
 
 @interface MapVC () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -44,7 +47,7 @@
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
         aView.canShowCallout = YES;
         aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        // could put a rightCalloutAccessoryView here
+        aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
     
     aView.annotation = annotation;
@@ -55,17 +58,28 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView
 {
-    UIImage *image = [self.delegate mapVC:self imageForAnnotation:aView.annotation];
-    [(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
+    NSDictionary *image = [self.delegate mapVC:self imageForAnnotation:aView.annotation];
+    if([aView.annotation.title isEqualToString:[image objectForKey:@"id"]]){
+        [(UIImageView *)aView.leftCalloutAccessoryView setImage:[image objectForKey:@"image"]];
+    }
 }
 
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"callout accessory tapped for annotation %@", [view.annotation title]);
+    [self performSegueWithIdentifier:@"Accessory Tapped Segue" sender:view.annotation];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"Accessory Tapped Segue"])
+    {
+        FlickrPhotoAnnotation *fpa = (FlickrPhotoAnnotation *)sender;
+        NSDictionary *photo = fpa.photo;
+        [segue.destinationViewController setImageURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge]];
+    }
+}
 
 - (void)viewDidLoad
 {

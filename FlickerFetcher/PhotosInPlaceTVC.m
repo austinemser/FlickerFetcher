@@ -9,6 +9,8 @@
 #import "PhotosInPlaceTVC.h"
 #import "ImageVC.h"
 #import "FlickrFetcher/FlickrFetcher.h"
+#import "MapVC.h"
+#import "FlickrPhotoAnnotation.h"
 
 @interface PhotosInPlaceTVC ()
 
@@ -35,6 +37,16 @@
         // Custom initialization
     }
     return self;
+}
+
+-(NSArray *)mapAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.photosInPlace count]];
+    for(NSDictionary *photo in self.photosInPlace)
+    {
+        [annotations addObject:[FlickrPhotoAnnotation annotationForPhoto:photo]];
+    }
+    return annotations;
 }
 
 - (void)viewDidLoad
@@ -79,6 +91,18 @@
 
 #pragma mark - Table view data source
 
+-(NSDictionary *)mapVC:(MapVC *)sender imageForAnnotation:(id <MKAnnotation>)annotation
+{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    FlickrPhotoAnnotation *fpa = (FlickrPhotoAnnotation *)annotation;
+    NSURL *imageURL = [FlickrFetcher urlForPhoto:fpa.photo format:FlickrPhotoFormatSquare];
+    NSData *data = [NSData dataWithContentsOfURL:imageURL];
+    UIImage *image = [UIImage imageWithData:data];
+    [dict setObject:image forKey:@"image"];
+    [dict setObject:[fpa.photo objectForKey:@"id"] forKey:@"id"];
+    
+    return dict;
+}
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -198,11 +222,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-        
+    if([segue.identifier isEqualToString:@"Image Segue"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDictionary *photo = [self.photosInPlace objectAtIndex:indexPath.row];
         [segue.destinationViewController setImageURL:[FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge]];
-    
+    }
+    else if([segue.identifier isEqualToString:@"Map Segue"])
+    {
+        [segue.destinationViewController setAnnotations:[self mapAnnotations]];
+        [segue.destinationViewController setDelegate:self];
+    }
 }
 
 @end
