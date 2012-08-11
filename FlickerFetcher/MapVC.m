@@ -58,12 +58,16 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView
 {
-    NSDictionary *image = [self.delegate mapVC:self imageForAnnotation:aView.annotation];
-    if([aView.annotation.title isEqualToString:[image objectForKey:@"id"]]){
-        [(UIImageView *)aView.leftCalloutAccessoryView setImage:[image objectForKey:@"image"]];
-    }
+    dispatch_queue_t downloadQueue = dispatch_queue_create("Download Queue", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSDictionary *image = [self.delegate mapVC:self imageForAnnotation:aView.annotation];
+        dispatch_async(dispatch_get_main_queue(),  ^{
+            if([aView.annotation.title isEqualToString:[image objectForKey:@"id"]]){
+                [(UIImageView *)aView.leftCalloutAccessoryView setImage:[image objectForKey:@"image"]];
+            }
+        });
+    });
 }
-
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
